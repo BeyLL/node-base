@@ -10,11 +10,11 @@ app.use(session({
 }));
 //req.session就是会话对象，也就是客户端在服务器端的对应记录对象
 app.get('/write',function(req,res){
-    req.session.username = 'admin';
+    req.session.name = 'admin';
     res.end('write ok');
 });
 app.get('/read',function(req,res){
-   console.log(req.session.username);
-   res.send(req.session.username);
+   console.log(req.session.name);
+   res.send(req.session.name);
 });
 app.listen(8080);
